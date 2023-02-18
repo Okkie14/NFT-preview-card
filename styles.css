@@ -3,11 +3,407 @@ html {
     font-size: 18px;
 }
 
-@media only screen and (min-width: 375px) {
-    .container {
-        width: 25%;
-        background-color: hsl(216, 50%, 16%);
+@media only screen and (min-width: 1281px) {
+    .container{
+        width: 20%;
         margin: 0 auto;
-        border-radius: 10px;
+        background-color: hsl(216, 50%, 16%);
+        border-radius: 15px;
+        box-shadow: 0 25px 50px 30px hsl(217, 53%, 8%);
+    }
+    
+    .image-container {
+        position: relative;
+        width: 90%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding-top: 5%;
+    }
+
+    .equilibium {
+        display: block;
+        height: auto;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .image-container::before {
+        content: url('./images/icon-view.svg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: scale(0);
+    }
+
+    .image-container::after {
+        content: '';
+        background-color: hsl(178, 100%, 50%);
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: scale(0);
+        top: 5%;
+        border-radius: 15px;
+    }
+
+    .image-container:hover::before, .image-container:hover::after {
+        transform: scale(1);
+        cursor: pointer;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .info > h2 {
+        cursor: pointer;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .info > h2:hover {
+        cursor: pointer;
+        color: hsl(178, 100%, 50%);
+    }
+
+    .info > p {
+        color: hsl(215, 51%, 70%);
+    }
+
+    .columns {
+        width: 90%;
+        margin-left: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'price days';
+    }
+
+    #price {
+        color: hsl(178, 100%, 50%);
+        padding-left: 1em;
+        margin: 0;
+        position: relative;
+        font-size: 1rem;
+    }
+
+    #price::before {
+        content: url('./images/icon-ethereum.svg');
+        position: absolute;
+        left: 0.1em;
+        bottom: 0.85em;        
+    }
+
+    #days-left {
+        color: hsl(215, 51%, 70%);
+        display: flex;
+        justify-content: end;
+        position: relative;
+    }
+
+    #days-left::before {
+        content: url('./images/icon-clock.svg');
+        position: absolute;
+        left: 2.4em;
+        bottom: 0.85em;
+    }
+
+    hr {
+        border: 1px solid hsl(215, 51%, 70%);
+        width: 90%;
+    }
+
+    footer {
+        width: 90%;
+        margin-left: 5%;
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    footer > img {
+        height: 25px;
+        width: 25px;
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+    }
+
+    footer > p {
+        color: hsl(215, 51%, 70%);
+        font-size: 0.8rem;
+        padding-left: 7%;
+        cursor: pointer;
+    }
+
+    footer a {
+        color: hsl(215, 51%, 70%);
+        text-decoration: none;
+    }
+
+    footer a:hover{
+        cursor: pointer;
+        color: hsl(178, 100%, 50%);
+    }
+
+    .attribution {
+        padding-top: 3%;
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .attribution a {
+        text-decoration: none;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .attribution a:hover{
+        color: hsl(178, 100%, 50%);
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        background-color: hsl(216, 50%, 16%);
+        border-radius: 15px;
+        box-shadow: 0 25px 50px 30px hsl(217, 53%, 8%);
+    }
+    
+    .image-container {
+        position: relative;
+        width: 90%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding-top: 5%;
+    }
+
+    .equilibium {
+        display: block;
+        height: auto;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .info > h2 {
+        cursor: pointer;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .info > p {
+        color: hsl(215, 51%, 70%);
+    }
+
+    .columns {
+        width: 90%;
+        margin-left: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'price days';
+    }
+
+    #price {
+        color: hsl(178, 100%, 50%);
+        padding-left: 1em;
+        margin: 0;
+        position: relative;
+        font-size: 1rem;
+    }
+
+    #price::before {
+        content: url('./images/icon-ethereum.svg');
+        position: absolute;
+        left: 0.1em;
+        bottom: 0.85em;        
+    }
+
+    #days-left {
+        color: hsl(215, 51%, 70%);
+        display: flex;
+        left: 40%;
+        position: relative;
+    }
+
+    #days-left::before {
+        content: url('./images/icon-clock.svg');
+        position: absolute;
+        bottom: 0.85em;
+        left: -15%;
+    }
+
+    hr {
+        border: 1px solid hsl(215, 51%, 70%);
+        width: 90%;
+    }
+
+    footer {
+        width: 90%;
+        margin-left: 5%;
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    footer > img {
+        height: 25px;
+        width: 25px;
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+    }
+
+    footer > p {
+        color: hsl(215, 51%, 70%);
+        font-size: 0.8rem;
+        padding-left: 7%;
+        cursor: pointer;
+    }
+
+    footer a {
+        color: hsl(215, 51%, 70%);
+        text-decoration: none;
+    }
+
+    .attribution {
+        padding-top: 3%;
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .attribution a {
+        text-decoration: none;
+        color: hsl(0, 0%, 100%);
+    }
+}
+
+@media only screen and (min-width: 830px) and (max-width:1281px) {
+    .container{
+        width: 40%;
+        margin: 0 auto;
+        background-color: hsl(216, 50%, 16%);
+        border-radius: 15px;
+        box-shadow: 0 25px 50px 30px hsl(217, 53%, 8%);
+    }
+    
+    .image-container {
+        position: relative;
+        width: 90%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding-top: 5%;
+    }
+
+    .equilibium {
+        display: block;
+        height: auto;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .info > h2 {
+        cursor: pointer;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .info > p {
+        color: hsl(215, 51%, 70%);
+    }
+
+    .columns {
+        width: 90%;
+        margin-left: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'price days';
+    }
+
+    #price {
+        color: hsl(178, 100%, 50%);
+        padding-left: 1em;
+        margin: 0;
+        position: relative;
+        font-size: 1rem;
+    }
+
+    #price::before {
+        content: url('./images/icon-ethereum.svg');
+        position: absolute;
+        left: 0.1em;
+        bottom: 0.85em;        
+    }
+
+    #days-left {
+        color: hsl(215, 51%, 70%);
+        display: flex;
+        left: 50%;
+        position: relative;
+    }
+
+    #days-left::before {
+        content: url('./images/icon-clock.svg');
+        position: absolute;
+        bottom: 0.90em;
+        left: -12%;
+    }
+
+    hr {
+        border: 1px solid hsl(215, 51%, 70%);
+        width: 90%;
+    }
+
+    footer {
+        width: 90%;
+        margin-left: 5%;
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    footer > img {
+        height: 25px;
+        width: 25px;
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+    }
+
+    footer > p {
+        color: hsl(215, 51%, 70%);
+        font-size: 0.8rem;
+        padding-left: 7%;
+        cursor: pointer;
+    }
+
+    footer a {
+        color: hsl(215, 51%, 70%);
+        text-decoration: none;
+    }
+
+    .attribution {
+        padding-top: 3%;
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .attribution a {
+        text-decoration: none;
+        color: hsl(0, 0%, 100%);
     }
 }
